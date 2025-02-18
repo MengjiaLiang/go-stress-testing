@@ -115,14 +115,14 @@ end:
 		receivedBytes)
 
 	fmt.Printf("\n\n")
-	fmt.Println("*************************  结果 stat  ****************************")
-	fmt.Println("处理协程数量:", concurrent)
-	// fmt.Println("处理协程数量:", concurrent, "程序处理总时长:", fmt.Sprintf("%.3f", float64(processingTime/concurrent)/1e9), "秒")
-	fmt.Println("请求总数（并发数*请求数 -c * -n）:", successNum+failureNum, "总请求时间:",
+	fmt.Println("*************************  report stat  ****************************")
+	fmt.Println("concurrent:", concurrent)
+	// fmt.Println("concurrent:", concurrent, "Total Time:", fmt.Sprintf("%.3f", float64(processingTime/concurrent)/1e9), "秒")
+	fmt.Println("Total request（concurrent*numberOfRequest -c * -n）:", successNum+failureNum, "Total duration:",
 		fmt.Sprintf("%.3f", float64(requestTime)/1e9),
-		"秒", "successNum:", successNum, "failureNum:", failureNum)
+		"sec", "successNum:", successNum, "failureNum:", failureNum)
 	printTop(requestTimeList)
-	fmt.Println("*************************  结果 end   ****************************")
+	fmt.Println("*************************  report end   ****************************")
 	fmt.Printf("\n\n")
 }
 
@@ -174,7 +174,7 @@ func header() {
 	fmt.Printf("\n\n")
 	// 打印的时长都为毫秒 总请数
 	fmt.Println("─────┬───────┬───────┬───────┬────────┬────────┬────────┬────────┬────────┬────────┬────────")
-	fmt.Println(" 耗时│ 并发数│ 成功数│ 失败数│   qps  │最长耗时│最短耗时│平均耗时│下载字节│字节每秒│ 状态码")
+	fmt.Println(" time│ concc │succeed│failed │   qps  │max dur │min dur │avg dur │ bytes  | bytes/s| resCode")
 	fmt.Println("─────┼───────┼───────┼───────┼────────┼────────┼────────┼────────┼────────┼────────┼────────")
 	return
 }

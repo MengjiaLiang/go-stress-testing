@@ -89,7 +89,7 @@ func main() {
 		fmt.Printf("参数不合法 %v \n", err)
 		return
 	}
-	fmt.Printf("\n 开始启动  并发数:%d 请求数:%d 请求参数: \n", concurrency, totalNumber)
+	fmt.Printf("\n Start test  concurrent no.:%d request no.:%d params: \n", concurrency, totalNumber)
 	request.Print()
 
 	// 开始处理
